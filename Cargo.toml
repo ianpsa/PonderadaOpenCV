@@ -1,3 +1,6 @@
+[bundle]
+identifier = "Ianzin"
+
 [package]
 name = "app-rust"
 version = "0.1.0"
