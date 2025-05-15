@@ -43,14 +43,21 @@ Os filtros podem ser combinados sequencialmente, permitindo efeitos complexos. A
 
 1. Acesse a [página de releases](https://github.com/ianpsa/PonderadaOpenCV/releases/) do projeto no GitHub
 2. Baixe o arquivo executável mais recente:
-3. Dê permissão de execução ao arquivo no Linux (não fechamos com macOS):
+3. instale os pacotes necessários:
+  ``` bash
+  sudo apt update
+  sudo apt install -y xdotool
+  ou
+  sudo pacman -S xdotool
+  ```
+4. Dê permissão de execução ao arquivo no Linux (não fechamos com macOS):
    ```bash
    chmod +x IanImageEditor
    ```
-4. Execute o arquivo baixado:
+5. Execute o arquivo baixado:
    - Windows: Clique duas vezes no `.exe`
    - Linux: Execute via terminal:
      ```bash
      ./IanImageEditor
      ```
-5. Agora com o programa aberto você pode editar as imagens.
+6. Agora com o programa aberto você pode editar as imagens.
