@@ -10,9 +10,9 @@
 - [OpenCV](https://opencv.org/) - Biblioteca robusta para processamento e manipulação de imagens
 - [RFD](https://github.com/PolyMeilex/rfd) - Biblioteca para diálogos nativos de seleção de arquivos
 
-### Processamento de Imagens (ImageProcess.rs)
+### Processamento de Imagens (image_process.rs)
 
-O módulo ImageProcess.rs implementa a lógica de processamento de imagens utilizando OpenCV, disponibilizando os seguintes filtros:
+O módulo image_process.rs implementa a lógica de processamento de imagens utilizando OpenCV, disponibilizando os seguintes filtros:
 
 - **Grayscale (Escala de Cinza)**: Transforma a imagem colorida em tons de cinza
 - **Invert (Inversão)**: Inverte todas as cores da imagem através de operação NOT

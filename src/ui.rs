@@ -1,6 +1,6 @@
 use dioxus::prelude::*;
 use rfd::AsyncFileDialog;
-use crate::imageProcess;
+use crate::image_process;
 
 pub fn app() -> Element {
     let mut file_path = use_signal(|| None::<String>); // Caminho do arquivo selecionado
@@ -120,7 +120,7 @@ pub fn app() -> Element {
                                     current_image()
                                 } {
                                     spawn(async move {
-                                        let result = imageProcess::add_filter(path, "grayscale".to_string()); // chama a função de escala de cinza em imageProcess.rs
+                                        let result = image_process::add_filter(path, "grayscale".to_string()); // chama a função de escala de cinza em image_process.rs
                                         processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de escala de cinza
                                     });
                                 }
@@ -136,7 +136,7 @@ pub fn app() -> Element {
                                     current_image()
                                 } {
                                     spawn(async move {
-                                        let result = imageProcess::add_filter(path, "invert".to_string()); // chama a função de inversão de cores em imageProcess.rs
+                                        let result = image_process::add_filter(path, "invert".to_string()); // chama a função de inversão de cores em image_process.rs
                                         processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de inversão de cores
                                     });
                                 }
@@ -152,7 +152,7 @@ pub fn app() -> Element {
                                     current_image()
                                 } {
                                     spawn(async move {
-                                        let result = imageProcess::add_filter(path, "contrast".to_string()); // chama a função de aumento de contraste em imageProcess.rs
+                                        let result = image_process::add_filter(path, "contrast".to_string()); // chama a função de aumento de contraste em image_process.rs
                                         processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de aumento de contraste
                                     });
                                 }
@@ -168,7 +168,7 @@ pub fn app() -> Element {
                                     current_image()
                                 } {
                                     spawn(async move {
-                                        let result = imageProcess::add_filter(path, "blur".to_string()); // chama a função de desfoque em imageProcess.rs
+                                        let result = image_process::add_filter(path, "blur".to_string()); // chama a função de desfoque em image_process.rs
                                         processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de desfoque
                                     });
                                 }
@@ -184,7 +184,7 @@ pub fn app() -> Element {
                                     current_image()
                                 } {
                                     spawn(async move {
-                                        let result = imageProcess::add_filter(path, "sharpen".to_string()); // chama a função de nitidez em imageProcess.rs
+                                        let result = image_process::add_filter(path, "sharpen".to_string()); // chama a função de nitidez em image_process.rs
                                         processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de nitidez
                                     });
                                 }
@@ -200,7 +200,7 @@ pub fn app() -> Element {
                                     current_image()
                                 } {
                                     spawn(async move {
-                                        let result = imageProcess::add_filter(path, "edges".to_string()); // chama a função de detecção de bordas em imageProcess.rs
+                                        let result = image_process::add_filter(path, "edges".to_string()); // chama a função de detecção de bordas em image_process.rs
                                         processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de detecção de bordas
                                     });
                                 }

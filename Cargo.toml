@@ -1,9 +1,6 @@
-[bundle]
-identifier = "Ianzin"
-
 [package]
-name = "app-rust"
-version = "0.1.0"
+name = "ImageVisualizer"
+version = "0.1.2"
 edition = "2021"
 
 [dependencies]

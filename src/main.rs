@@ -1,5 +1,5 @@
 mod ui;
-mod imageProcess;
+mod image_process;
 
 
 fn main() {

@@ -1,0 +1,7 @@
+[application]
+name = "ImageVisualizer"
+
+[bundle]
+identifier = "com.ianzin.apprust"
+publisher = "IanZinDev"
+icon = ["assets/icon.png"]
