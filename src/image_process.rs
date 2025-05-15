@@ -47,6 +47,18 @@ pub fn add_filter(input_image_path: String, filter_type: String) -> String { // 
             imgproc::cvt_color(&img, &mut gray, imgproc::COLOR_BGR2GRAY, 0, AlgorithmHint::ALGO_HINT_DEFAULT).unwrap();
             imgproc::canny(&gray, &mut result, 100.0, 200.0, 3, false).unwrap();
         }
+        "resize_half" => { // reduz a resolução da imagem pela metade
+            imgproc::resize(&img, &mut result, core::Size::default(), 0.5, 0.5, imgproc::INTER_LINEAR).unwrap();
+        }
+        "rotate_90_cw" => { // gira a imagem 90 graus no sentido horário
+            core::rotate(&img, &mut result, core::ROTATE_90_CLOCKWISE).unwrap();
+        }
+        "rotate_90_ccw" => { // gira a imagem 90 graus no sentido anti-horário
+            core::rotate(&img, &mut result, core::ROTATE_90_COUNTERCLOCKWISE).unwrap();
+        }
+        "reset" => { // reseta a imagem para a original
+            result = img.clone();
+        }
         _ => { // opção inválida
             result = img.clone();
         }

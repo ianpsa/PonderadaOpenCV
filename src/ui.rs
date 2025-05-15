@@ -207,6 +207,54 @@ pub fn app() -> Element {
                             },
                             "Detecção de bordas"
                         }
+                        button { // Botão para o filtro de redução de tamanho
+                            style: "background: linear-gradient(to right, #374151, #1f2937); color: white; padding: 0.75rem 1rem; border-radius: 0.5rem; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer;",
+                            onclick: move |_| {
+                                if let Some(path) = if processed_image().is_some() {
+                                    processed_image()
+                                } else {
+                                    current_image()
+                                } {
+                                    spawn(async move {
+                                        let result = image_process::add_filter(path, "resize_half".to_string()); // chama a função de redução de tamanho em image_process.rs
+                                        processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de redução de tamanho
+                                    });
+                                }
+                            },
+                            "Redução de Resolução"
+                        }
+                        button { // Botão para o filtro de rotação de 90 graus no sentido horário
+                            style: "background: linear-gradient(to right, #374151, #1f2937); color: white; padding: 0.75rem 1rem; border-radius: 0.5rem; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer;",
+                            onclick: move |_| {
+                                if let Some(path) = if processed_image().is_some() {
+                                    processed_image()
+                                } else {
+                                    current_image()
+                                } {
+                                    spawn(async move {
+                                        let result = image_process::add_filter(path, "rotate_90_cw".to_string()); // chama a função de rotação de 90 graus no sentido horário em image_process.rs
+                                        processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de rotação de 90 graus no sentido horário
+                                    });
+                                }
+                            },
+                            "Rotação de 90 graus no sentido horário"
+                        }
+                        button { // Botão para o filtro de rotação de 90 graus no sentido anti-horário
+                            style: "background: linear-gradient(to right, #374151, #1f2937); color: white; padding: 0.75rem 1rem; border-radius: 0.5rem; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer;",
+                            onclick: move |_| {
+                                if let Some(path) = if processed_image().is_some() {
+                                    processed_image()
+                                } else {
+                                    current_image()
+                                } {
+                                    spawn(async move {
+                                        let result = image_process::add_filter(path, "rotate_90_ccw".to_string()); // chama a função de rotação de 90 graus no sentido anti-horário em image_process.rs
+                                        processed_image.set(Some(result)); // define a imagem processada como a imagem com o filtro de rotação de 90 graus no sentido anti-horário
+                                    });
+                                }
+                            },
+                            "Rotação de 90 graus no sentido anti-horário"
+                        }
                         button { // Botão para o filtro de reset
                             style: "background: linear-gradient(to right, #dc2626, #991b1b); color: white; padding: 0.75rem 1rem; border-radius: 0.5rem; transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1); cursor: pointer; text-align: center; align-items: center; justify-content: center;",
                             onclick: move |_| { 
